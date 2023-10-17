@@ -1,34 +1,28 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 
 const UseMemo = () => {
 
-    const [counter, setCounter] = useState(0);
     const [todos, setTodos] = useState ([]);
+    const [getTodo, setGetTodo] = useState('');
 
-    function addTodo() {
-        setTodos([...todos, "New Todo"])
+    function handleChange(event) {
+        setGetTodo(event.target.value)
+        console.log(getTodo)
     }
 
-    const lengthyCalculation = useMemo(() =>  calculate(counter), [counter]);
+    function addTodo() {
+        setTodos([...todos, getTodo])
+    }
+
   return (
     <div>
-        <h1>lengthy Calculation - {lengthyCalculation}</h1>
-        <h1>counter - {counter}</h1>
-        <button onClick={() => setCounter((value) => value + 1)}>+</button>
-        <button onClick={() => setCounter((value) => value - 1)}>-</button>
-        <button onClick={addTodo}>Add Todo</button>
+        <input type="text" name="" onChange={handleChange}/>
+        <button onClick={addTodo}>Add todo</button>
         {todos.map((todo) => (
             <div>{todo}</div>
         ))}
     </div>
   )
-}
-
-const calculate = (counter) => {
-    for (let i = 0; i < 1000000000; i++){
-        counter += 1
-    }
-    return counter;
 }
 
 export default UseMemo;

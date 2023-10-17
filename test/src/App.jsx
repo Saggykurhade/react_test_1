@@ -5,7 +5,7 @@ import UseReducer from './components/UseReducer';
 import Todos from './components/Todos';
 import Register from './components/Register';
 import UseMemo from './components/UseMemo';
-import GlobalContext from './components/Context/GlobalContext';
+// import GlobalContext from './components/Context/GlobalContext';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route exact path='/Todos' element={<Todos />} />
       <Route exact path='/UseReducer' element={<UseReducer />} />
       <Route exact path='/Register' element={<Register />} />
-      <Route exact path='/GlobalContext' element={<GlobalContext />} />
+      {/* <Route exact path='/GlobalContext' element={<GlobalContext />} /> */}
     </Routes>
   );
 }
